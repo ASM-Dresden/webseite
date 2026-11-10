@@ -1,0 +1,151 @@
+/* Automation Solutions Müller – Farben aus dem Logo (ASM Logo grün.png) */
+:root {
+  --navy: #0b2540;
+  --navy-2: #0f3354;
+  --blau: #1d5b8a;
+  --gruen: #3cefa0;        /* Leiterbahn-Grün, nur auf dunklem Grund */
+  --gruen-dunkel: #0e8a5a; /* Grün für Text auf hellem Grund */
+  --text: #1b2733;
+  --text-leise: #52606d;
+  --flaeche: #f3f6f9;
+  --linie: #dbe3ea;
+  --weiss: #ffffff;
+  --radius: 10px;
+  --breite: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--weiss);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blau); }
+a:hover { color: var(--navy); }
+
+.inhalt { max-width: var(--breite); margin: 0 auto; padding: 0 20px; }
+
+/* Kopfzeile */
+.kopf {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid var(--linie);
+  backdrop-filter: blur(6px);
+}
+.kopf .inhalt { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marke { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
+.marke img { width: 72px; }
+.marke span { font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
+.marke small { display: block; font-weight: 400; color: var(--text-leise); font-size: .8rem; }
+.navi { display: flex; gap: 6px; flex-wrap: wrap; }
+.navi a {
+  text-decoration: none; color: var(--navy); font-weight: 600; font-size: .95rem;
+  padding: 8px 12px; border-radius: 6px;
+}
+.navi a:hover { background: var(--flaeche); }
+.navi a.knopf-klein { background: var(--navy); color: var(--weiss); }
+.navi a.knopf-klein:hover { background: var(--blau); }
+
+/* Startbereich */
+.start {
+  position: relative; overflow: hidden;
+  background: radial-gradient(1200px 500px at 85% 20%, #164a75 0%, transparent 60%), var(--navy);
+  color: var(--weiss);
+  padding: 96px 0 104px;
+}
+.start::before {
+  content: ""; position: absolute; inset: 0; opacity: .18; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' fill='none' stroke='%233cefa0' stroke-width='1.4'%3E%3Cpath d='M0 40h50l20 20h50M160 40h-20M40 0v20l20 20M120 160v-40l-20-20H60M0 120h30l15 15v25M100 0v30l15 15h45'/%3E%3Ccircle cx='120' cy='60' r='3'/%3E%3Ccircle cx='140' cy='40' r='3'/%3E%3Ccircle cx='60' cy='100' r='3'/%3E%3Ccircle cx='45' cy='135' r='3'/%3E%3C/svg%3E");
+  mask-image: linear-gradient(90deg, transparent 0%, #000 55%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%);
+}
+.start .inhalt { position: relative; }
+.ort { color: var(--gruen); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; margin: 0 0 12px; }
+.start h1 { font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.15; margin: 0 0 20px; max-width: 18ch; }
+.start h1 em { font-style: normal; color: var(--gruen); }
+.start p.einleitung { font-size: 1.2rem; max-width: 60ch; color: #cfdbe6; margin: 0 0 32px; }
+.knoepfe { display: flex; gap: 12px; flex-wrap: wrap; }
+.knopf {
+  display: inline-block; text-decoration: none; font-weight: 600;
+  padding: 13px 22px; border-radius: 8px; border: 2px solid var(--gruen);
+}
+.knopf.voll { background: var(--gruen); color: var(--navy); }
+.knopf.voll:hover { background: #6ff5b8; color: var(--navy); }
+.knopf.rand { color: var(--weiss); }
+.knopf.rand:hover { background: rgba(60, 239, 160, .12); color: var(--weiss); }
+
+/* Abschnitte */
+.abschnitt { padding: 88px 0; }
+.abschnitt.grau { background: var(--flaeche); }
+.kopfzeile { max-width: 62ch; margin-bottom: 44px; }
+.kicker { color: var(--gruen-dunkel); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .82rem; margin: 0 0 8px; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; color: var(--navy); margin: 0 0 14px; }
+.kopfzeile p { color: var(--text-leise); margin: 0; }
+
+/* Leistungen */
+.karten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.karte {
+  background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius);
+  padding: 28px 24px; border-top: 4px solid var(--blau);
+}
+.karte svg { width: 40px; height: 40px; color: var(--blau); margin-bottom: 14px; }
+.karte h3 { margin: 0 0 10px; font-size: 1.15rem; color: var(--navy); }
+.karte p { margin: 0 0 12px; color: var(--text-leise); font-size: .98rem; }
+.karte ul { margin: 0; padding-left: 18px; font-size: .95rem; }
+.karte li { margin-bottom: 4px; }
+.karte li::marker { color: var(--gruen-dunkel); }
+
+/* Technik-Stack */
+.stack { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.stack-gruppe { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); padding: 24px; }
+.stack-gruppe h3 { margin: 0 0 14px; font-size: 1rem; color: var(--navy); text-transform: uppercase; letter-spacing: .06em; }
+.marken { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.marken li {
+  font-size: .9rem; font-weight: 600; color: var(--navy-2);
+  background: #e8f0f6; border: 1px solid #cddbe7; border-radius: 999px; padding: 4px 12px;
+}
+
+/* Kontakt */
+.kontakt { background: var(--navy); color: var(--weiss); }
+.kontakt h2 { color: var(--weiss); }
+.kontakt .kicker { color: var(--gruen); }
+.kontakt .kopfzeile p { color: #cfdbe6; }
+.kontakt-raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.kontakt-feld {
+  display: block; text-decoration: none; color: var(--weiss);
+  background: var(--navy-2); border: 1px solid #1f4a72; border-radius: var(--radius); padding: 24px;
+}
+a.kontakt-feld:hover { border-color: var(--gruen); color: var(--weiss); }
+.kontakt-feld span { display: block; color: var(--gruen); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.kontakt-feld strong { font-size: 1.1rem; word-break: break-word; }
+
+/* Fuß */
+.fuss { background: #071a2d; color: #9fb2c4; font-size: .9rem; padding: 26px 0; }
+.fuss .inhalt { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.fuss a { color: #cfdbe6; margin-left: 16px; }
+.fuss a:first-child { margin-left: 0; }
+
+/* Rechtstexte */
+.rechtstext { padding: 56px 0 80px; }
+.rechtstext .inhalt { max-width: 780px; }
+.rechtstext h1 { color: var(--navy); font-size: 2rem; margin: 0 0 24px; }
+.rechtstext h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+.platzhalter { background: #fff3cd; border: 1px dashed #c99a00; padding: 0 4px; border-radius: 3px; }
+
+@media (max-width: 720px) {
+  .kopf .inhalt { flex-direction: column; align-items: flex-start; padding-top: 10px; padding-bottom: 10px; gap: 6px; }
+  .marke img { width: 56px; }
+  .navi a { padding: 6px 10px; font-size: .9rem; }
+  html { scroll-padding-top: 120px; }
+  .start { padding: 64px 0 72px; }
+  .abschnitt { padding: 64px 0; }
+  .fuss a { margin-left: 0; margin-right: 16px; }
+}

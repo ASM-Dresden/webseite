@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automation Solutions Müller – Webseite im Aufbau</title>
+  <meta name="description" content="Automation Solutions Müller, Dresden: SPS- und Roboterprogrammierung, Bildverarbeitung, Inbetriebnahme und Service. Die Webseite befindet sich im Aufbau.">
+  <link rel="icon" type="image/png" href="bilder/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; background: var(--navy); }
+    .baustelle { flex: 1; display: flex; align-items: center; padding: 48px 0; }
+    .baustelle .inhalt { width: 100%; }
+    .tafel {
+      max-width: 640px; margin: 0 auto; text-align: center;
+      background: var(--weiss); border-radius: 16px; padding: 44px 32px 36px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+    }
+    .tafel img { width: 240px; margin: 0 auto 18px; }
+    .tafel h1 { font-size: clamp(1.4rem, 4vw, 2rem); color: var(--navy); margin: 0 0 4px; line-height: 1.2; max-width: none; }
+    .tafel .inhaber { color: var(--text-leise); margin: 0 0 26px; }
+    .hinweis {
+      display: inline-block; font-weight: 700; color: var(--gruen-dunkel);
+      letter-spacing: .08em; text-transform: uppercase; font-size: .85rem;
+      border: 1px solid #b7e6d0; background: #ecfaf3; border-radius: 999px; padding: 5px 14px; margin-bottom: 14px;
+    }
+    .tafel p.text { margin: 0 auto 30px; max-width: 46ch; color: var(--text); }
+    .wege { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wege a {
+      display: block; text-decoration: none; background: var(--navy); color: var(--weiss);
+      border-radius: var(--radius); padding: 14px 12px; border: 2px solid var(--navy);
+    }
+    .wege a:hover { border-color: var(--gruen); color: var(--weiss); }
+    .wege span { display: block; color: var(--gruen); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .wege strong { font-size: 1rem; word-break: break-word; }
+    @media (max-width: 560px) {
+      .tafel { padding: 32px 20px 26px; }
+      .tafel img { width: 180px; }
+      .wege { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="baustelle start">
+  <div class="inhalt">
+    <div class="tafel">
+      <img src="bilder/asm-signet.png" alt="ASM Logo" width="560" height="360">
+      <h1>Automation Solutions Müller</h1>
+      <p class="inhaber">Inh. Toni Müller · Dresden</p>
+
+      <div class="hinweis">Webseite im Aufbau</div>
+      <p class="text">Hier entsteht der neue Internetauftritt. Bis dahin erreichen Sie mich gern direkt per Telefon oder E-Mail.</p>
+
+      <div class="wege">
+        <a href="tel:+491734495038"><span>Telefon</span><strong>+49 173 4495038</strong></a>
+        <a href="mailto:info@asm-dresden.de"><span>E-Mail</span><strong>info@asm-dresden.de</strong></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="fuss">
+  <div class="inhalt">
+    <div>© 2026 Automation Solutions Müller, Inh. Toni Müller</div>
+    <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
